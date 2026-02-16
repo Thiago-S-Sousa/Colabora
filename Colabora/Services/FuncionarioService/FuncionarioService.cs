@@ -1,10 +1,17 @@
-﻿using Colabora.Interfaces;
+﻿using Colabora.DataContext;
+using Colabora.Interfaces;
 using Colabora.Models;
 
 namespace Colabora.Services.FuncionarioService
 {
     public class FuncionarioService : IFuncionarioInterface
     {
+        private readonly ApplicationDbContext _context;
+        public FuncionarioService(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
         public Task<ServiceResponse<List<FuncionarioModel>>> CreateFuncionario(FuncionarioModel novoFuncionario)
         {
             throw new NotImplementedException();
